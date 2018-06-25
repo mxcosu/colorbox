@@ -43,7 +43,6 @@
 		closeButton: true,
 		fastIframe: true,
 		open: false,
-		reposition: true,
 		loop: true,
 		slideshow: false,
 		slideshowAuto: true,
@@ -482,9 +481,15 @@
 			$content = $tag(div, "Content").append(
 				$title = $tag(div, "Title"),
 				$current = $tag(div, "Current"),
-				$prev = $('<button type="button"/>').attr({id:prefix+'Previous'}),
-				$next = $('<button type="button"/>').attr({id:prefix+'Next'}),
-				$slideshow = $('<button type="button"/>').attr({id:prefix+'Slideshow'}),
+				$prev = $('<button type="button"/>').attr({id:prefix+'Previous'}).html(
+					'<span class="sr-only">Previous</span>'
+				),
+				$next = $('<button type="button"/>').attr({id:prefix+'Next'}).html(
+					'<span class="sr-only">Next</span>'
+				),
+				$slideshow = $('<button type="button"/>').attr({id:prefix+'Slideshow'}).html(
+					'<span class="sr-only">Slideshow</span>'
+				),
 				$loadingOverlay
 			);
 
